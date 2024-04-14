@@ -14,7 +14,11 @@
 </head>
 <body <?php body_class(); ?>> <!-- body_class() funtion adds a bunch of classes for every page, you can even add more classes by pass it as arguments 'additional-class' -->
 
-<?php wp_body_open(); ?> <!-- It Enable to inset asynchronous javascript code right after the opening body tag i.e useful to inject GMT or Pixel code -->
+<?php
+if (function_exists('wp_body_open')) {
+    wp_body_open(); /**It Enable to inset asynchronous javascript code right after the opening body tag i.e useful to inject GMT or Pixel code */
+}
+?> 
 
 <header>Header</header>
 
